@@ -13,7 +13,7 @@ contract CampaignFactory {
         deployedCampaigns.push(new Campaign(minimumContribution, msg.sender));
     }
     
-    function getDeployedContracts() public view returns(address[]) {
+    function getDeployedCampaigns() public view returns(address[]) {
         return deployedCampaigns; 
     }
     

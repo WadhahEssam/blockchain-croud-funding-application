@@ -10,6 +10,7 @@ const buildPath = path.resolve(__dirname, 'build');
 // so most of the fs extra functions have a sync version of them
 fs.removeSync(buildPath);
 
+// * the contract file name is the only thing that i will need to change in future
 const contractPath = path.resolve(__dirname, 'contracts', 'Campaign.sol');
 
 const source = fs.readFileSync(contractPath, 'utf8');
