@@ -10,6 +10,7 @@ let web3;
 if ( typeof window !== 'undefined' && typeof window.web3 !== 'undefined' ) {
   // same as before
   web3 = new Web3(window.web3.currentProvider);
+  console.log('metamask');
 } 
 // when we are on the server or metamask isn't installed
 // so we are going to use infura
@@ -20,6 +21,7 @@ else {
   // it is okey if people saw your infura link
   const provider = new Web3.providers.HttpProvider('https://rinkeby.infura.io/v3/eefad425f6784d09b0e483759b44d7a6');
   web3 = new Web3(provider);
+  console.log('server');
 }
 
 export default web3;

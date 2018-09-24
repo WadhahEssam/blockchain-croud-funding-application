@@ -3,9 +3,8 @@ import factory from '../ethereum/factory';
 
 class CampaignIndex extends React.Component {
   async componentDidMount() {
-    const campaigns = await factory.methods.getDeployedCampaings().call();
+    const campaigns = await factory.methods.getDeployedCampaigns().call();
     console.log(campaigns);
-    console.log('hey');
   }
   
   render() {
