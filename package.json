@@ -4,7 +4,10 @@
   "description": "solving the kickstarter problems with blockchain",
   "main": "]",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+     "dev": "next dev",
+     "build": "next build",
+     "start": "next start"
   },
   "author": "Wadah",
   "license": "MIT",
