@@ -1,5 +1,5 @@
 import web3 from './web3';
-import { ABI } from './build/CampaignFactory.json';
+import compiledFactory from './build/CampaignFactory.json';
 import { contractAddress } from './contract.json';
 
-export default new web3.eth.Contract(ABI, contractAddress);
+export default new web3.eth.Contract(JSON.parse(compiledFactory.interface) , contractAddress);

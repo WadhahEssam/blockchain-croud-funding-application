@@ -5,6 +5,7 @@ class CampaignIndex extends React.Component {
   async componentDidMount() {
     const campaigns = await factory.methods.getDeployedCampaings().call();
     console.log(campaigns);
+    console.log('hey');
   }
   
   render() {
