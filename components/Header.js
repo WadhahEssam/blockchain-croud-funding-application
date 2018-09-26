@@ -28,7 +28,7 @@ class Header extends Component {
           </Menu.Item>
 
           <Menu.Item name='add' active={activeItem === 'add'} onClick={this.handleItemClick}>
-            <Icon name='add' />
+            <Icon name='add circle' />
           </Menu.Item>
         </Menu.Menu>
       </Menu>
