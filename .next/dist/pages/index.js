@@ -40,6 +40,10 @@ var _factory = require('../ethereum/factory');
 
 var _factory2 = _interopRequireDefault(_factory);
 
+require('semantic-ui-css/semantic.min.css');
+
+var _semanticUiReact = require('semantic-ui-react');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _jsxFileName = 'D:\\xampp\\htdocs\\blockchain-croud-funding-application\\pages\\index.js?entry';
@@ -58,20 +62,13 @@ var CampaignIndex = function (_React$Component) {
     key: 'componentDidMount',
     value: function () {
       var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-        var campaigns;
         return _regenerator2.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
-                return _factory2.default.methods.getDeployedCampaigns().call();
+                console.log(this.props);
 
-              case 2:
-                campaigns = _context.sent;
-
-                console.log(campaigns);
-
-              case 4:
+              case 1:
               case 'end':
                 return _context.stop();
             }
@@ -88,17 +85,59 @@ var CampaignIndex = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('h1', {
+      return _react2.default.createElement('div', {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12
+          lineNumber: 21
         }
-      }, 'are u happy react');
+      }, _react2.default.createElement('h1', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22
+        }
+      }, 'address of the campaign : ', this.props.campaigns[0]), _react2.default.createElement(_semanticUiReact.Button, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23
+        }
+      }, 'Click Here'));
     }
+  }], [{
+    key: 'getInitialProps',
+    value: function () {
+      var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2() {
+        var campaigns;
+        return _regenerator2.default.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return _factory2.default.methods.getDeployedCampaigns().call();
+
+              case 2:
+                campaigns = _context2.sent;
+                return _context2.abrupt('return', {
+                  campaigns: campaigns
+                });
+
+              case 4:
+              case 'end':
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function getInitialProps() {
+        return _ref2.apply(this, arguments);
+      }
+
+      return getInitialProps;
+    }()
   }]);
 
   return CampaignIndex;
 }(_react2.default.Component);
 
 exports.default = CampaignIndex;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzXFxpbmRleC5qcyJdLCJuYW1lcyI6WyJSZWFjdCIsImZhY3RvcnkiLCJDYW1wYWlnbkluZGV4IiwibWV0aG9kcyIsImdldERlcGxveWVkQ2FtcGFpZ25zIiwiY2FsbCIsImNhbXBhaWducyIsImNvbnNvbGUiLCJsb2ciLCJDb21wb25lbnQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSxBQUFPOzs7O0FBQ1AsQUFBTyxBQUFhOzs7Ozs7Ozs7SUFFZCxBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7O3VCQUVzQixrQkFBQSxBQUFRLFFBQVIsQUFBZ0IsdUJBQWhCLEFBQXVDLEE7O21CQUF6RDtBLHFDQUNOOzt3QkFBQSxBQUFRLElBQVIsQUFBWTs7Ozs7Ozs7Ozs7Ozs7Ozs7OzZCQUdMLEFBQ1A7NkJBQ0UsY0FBQTs7b0JBQUE7c0JBQUE7QUFBQTtBQUFBLE9BQUEsRUFERixBQUNFLEFBRUg7Ozs7O0VBVnlCLGdCQUFNLEEsQUFhbEM7O2tCQUFBLEFBQWUiLCJmaWxlIjoiaW5kZXguanM/ZW50cnkiLCJzb3VyY2VSb290IjoiRDoveGFtcHAvaHRkb2NzL2Jsb2NrY2hhaW4tY3JvdWQtZnVuZGluZy1hcHBsaWNhdGlvbiJ9
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzXFxpbmRleC5qcyJdLCJuYW1lcyI6WyJSZWFjdCIsImZhY3RvcnkiLCJCdXR0b24iLCJDYW1wYWlnbkluZGV4IiwiY29uc29sZSIsImxvZyIsInByb3BzIiwiY2FtcGFpZ25zIiwibWV0aG9kcyIsImdldERlcGxveWVkQ2FtcGFpZ25zIiwiY2FsbCIsIkNvbXBvbmVudCJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLEFBQU87Ozs7QUFDUCxBQUFPLEFBQWE7Ozs7QUFDcEI7O0FBQ0EsQUFBUzs7Ozs7OztJQUVILEE7Ozs7Ozs7Ozs7Ozs7Ozs7bUJBR0Y7d0JBQUEsQUFBUSxJQUFJLEtBQVosQUFBaUI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs2QkFVVixBQUNQOzZCQUNFLGNBQUE7O29CQUFBO3NCQUFBLEFBQ0U7QUFERjtBQUFBLE9BQUEsa0JBQ0UsY0FBQTs7b0JBQUE7c0JBQUE7QUFBQTtBQUFBLFNBQStCLG1DQUFBLEFBQUssTUFBTCxBQUFXLFVBRDVDLEFBQ0UsQUFBK0IsQUFBcUIsQUFDcEQscUJBQUEsQUFBQzs7b0JBQUQ7c0JBQUE7QUFBQTtBQUFBLFNBSEosQUFDRSxBQUVFLEFBR0w7Ozs7Ozs7Ozs7Ozt1QkFieUIsa0JBQUEsQUFBUSxRQUFSLEFBQWdCLHVCQUFoQixBQUF1QyxBOzttQkFBekQ7QTs7NkIsQUFDQztBQUFBLEFBQ0w7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7RUFUc0IsZ0JBQU0sQSxBQXVCbEM7O2tCQUFBLEFBQWUiLCJmaWxlIjoiaW5kZXguanM/ZW50cnkiLCJzb3VyY2VSb290IjoiRDoveGFtcHAvaHRkb2NzL2Jsb2NrY2hhaW4tY3JvdWQtZnVuZGluZy1hcHBsaWNhdGlvbiJ9

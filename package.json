@@ -5,9 +5,9 @@
   "main": "]",
   "scripts": {
     "test": "mocha",
-     "dev": "next dev",
-     "build": "next build",
-     "start": "next start"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "author": "Wadah",
   "license": "MIT",
@@ -18,8 +18,17 @@
     "next": "^4.1.4",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "semantic-ui-css": "^2.4.0",
+    "semantic-ui-react": "^0.82.5",
     "solc": "^0.4.25",
     "truffle-hdwallet-provider": "0.0.3",
     "web3": "^1.0.0-beta.26"
+  },
+  "devDependencies": {
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "url-loader": "^1.1.1"
   }
 }
