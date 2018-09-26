@@ -13,7 +13,7 @@ class Header extends Component {
   componentWillMount() {
     if (process.browser) {
       // client-side-only code
-      console.log(Router.router.query);
+      console.log(Router);
     }
   }
 
@@ -34,17 +34,13 @@ class Header extends Component {
 
         <Menu.Menu position='right'>
 
-          <Link href={{ pathname: '/', query: {test: 'test'} }}>
-            <Menu.Item name='signup' active={activeItem === 'signup'} onClick={this.handleItemClick}>
+            <Menu.Item name='signup' active={activeItem === 'signup'} onClick={() => { Router.push('/')} }>
               Campaigns
             </Menu.Item>
-          </Link>
 
-          <Link href={{ pathname: '/campaigns/new', query: {test: 'test'} }}>
-            <Menu.Item name='add' active={activeItem === 'add'} onClick={this.handleItemClick}>
+            <Menu.Item name='add' active={activeItem === 'add'} onClick={() => { Router.push('/campaigns/new') } }>
               <Icon name='add circle' />
             </Menu.Item>
-          </Link>
 
         </Menu.Menu>
       </Menu>
