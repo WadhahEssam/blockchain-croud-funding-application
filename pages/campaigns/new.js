@@ -3,6 +3,7 @@ import Layout from '../../components/Layout';
 import { Button, Form, Input, Container, Segment } from 'semantic-ui-react'
 import factory from '../../ethereum/factory';
 import web3 from '../../ethereum/web3';
+import Router from 'next/router';
 
 class NewCampaign extends Component {
 
@@ -23,7 +24,7 @@ class NewCampaign extends Component {
     const accounts = await web3.eth.getAccounts();
     factory.methods.createCampaign(this.state.value).send({ from: accounts[0] })
     .then(response => {
-      Router.pushRoute('/#');
+      Router.push('/#');
     }) 
     .catch(error => {
       this.setState({ loading: false, responseColor: 'red', responseMessage: error.message });
@@ -33,7 +34,6 @@ class NewCampaign extends Component {
   render() {
     return(
         <Layout>
-
 
             <Container>
 
@@ -64,6 +64,7 @@ class NewCampaign extends Component {
               </Form>
                             
             </Container>
+
         </Layout>
     );
   }
