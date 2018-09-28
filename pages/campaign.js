@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Layout from '../components/Layout';
 import Router from 'next/router';
-import { runInThisContext } from 'vm';
+import web3 from '../ethereum/web3';
+import compiledCampaign from '../ethereum/build/Campaign.json';
 
 class Campaign extends Component {
 
@@ -15,8 +16,12 @@ class Campaign extends Component {
       this.setState({ campaignAddress: Router.router.query.campaignAddress + '' });
       console.log(Router.router.query.campaignAddress);
     }
+  }
 
-
+  async componentDidMount() {
+    const campaignContract = await new web3.eth.Contract(JSON.parse(compiledCampaign.interface), this.state.campaignAddress);
+    const campaignDetails = await campaignContract.methods.getSummary().call();
+    console.log(campaignDetails); 
   }
 
   render() {

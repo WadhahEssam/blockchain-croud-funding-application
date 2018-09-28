@@ -57,4 +57,4 @@ class CampaignIndex extends React.Component {
   }
 }
 
-export default CampaignIndex;  
+export default CampaignIndex;   
