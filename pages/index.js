@@ -30,7 +30,7 @@ class CampaignIndex extends React.Component {
     return <Card.Group items={items}/>
   }
   
-  render() {
+  render() { 
     return(
       
       <div>
