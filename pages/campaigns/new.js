@@ -20,8 +20,9 @@ class NewCampaign extends Component {
     // creating a new campaign
     // we don't have to specify the amount of gas 
     // cuz metamask is going to do that automatically
-    this.setState({ value: '', loading: true, responseMessage: '' });
+    this.setState({ loading: true, responseMessage: '' });
     const accounts = await web3.eth.getAccounts();
+    console.log(this.state);
     factory.methods.createCampaign(this.state.value).send({ from: accounts[0] })
     .then(response => {
       Router.push('/#');

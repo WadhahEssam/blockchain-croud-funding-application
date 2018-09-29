@@ -14,7 +14,7 @@ beforeEach( async () => {
     .deploy({ data: compiledFactory.bytecode })
     .send({ from: accounts[0], gas: '1000000' });
 
-  await factoryContract.methods.createCampaign('100').send({ from: accounts[0], gas: '1000000' });
+  await factoryContract.methods.createCampaign('101').send({ from: accounts[0], gas: '1000000' });
 
   const addresses = await factoryContract.methods.getDeployedCampaigns().call();
   campaignContractAddress = addresses[0];
