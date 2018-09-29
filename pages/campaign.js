@@ -143,6 +143,8 @@ class Campaign extends Component {
     );
   }
 
+  visitRequests = () => { Router.push({ pathname: '/requests', query: {campaignAddress: this.state.campaignAddress} }); };
+
   render() {
     return (
       <Layout>
@@ -154,7 +156,7 @@ class Campaign extends Component {
               {this.renderDetails()}
 
               <Container textAlign="center" style={{ padding: 20 }}>
-                <Button color="green" >View Requests</Button>
+                <Button color="green" onClick={this.visitRequests} >View Requests</Button>
               </Container>
             </Grid.Column>
 
