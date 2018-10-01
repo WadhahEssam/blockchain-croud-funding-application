@@ -9,13 +9,19 @@ class Requests extends Component {
 
   state = {
     campaignAddress: null,
+    campaignContract: null,
+    requests: null
   }
 
   async componentDidMount() {
-    this.setState({ campaignAddress: Router.router.query.campaignAddress });
     const campaignContract = await new web3.eth.Contract(JSON.parse(compiledCampaign.interface), this.state.campaignAddress);
+    const requests = await campaignContract.methods.requests(0).call();
 
-
+    this.setState({ 
+      campaignAddress: Router.router.query.campaignAddress,
+      campaignContract,
+      requests,
+    });
   }
 
   visitCreateRequestPage = () => { Router.push({ pathname: '/requests/new', query: { campaignAddress: this.state.campaignAddress } })};
