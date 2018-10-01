@@ -15,12 +15,12 @@ class Requests extends Component {
 
   async componentDidMount() {
     const campaignContract = await new web3.eth.Contract(JSON.parse(compiledCampaign.interface), this.state.campaignAddress);
-    const requests = await campaignContract.methods.requests(0).call();
+    // const requests = await campaignContract.methods.requests(0).call();
 
     this.setState({ 
       campaignAddress: Router.router.query.campaignAddress,
       campaignContract,
-      requests,
+      // requests,
     });
   }
 
