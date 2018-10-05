@@ -56,6 +56,7 @@ class Requests extends Component {
     })
 
     const norequests = () => {
+      console.log(this.state.requestCount);
       if (this.state.requestCount === 0) {
         return (
           <Table.Row>
