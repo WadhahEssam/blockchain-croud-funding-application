@@ -37,7 +37,6 @@ contract Campaign {
     uint public approversCount; 
     Request[] public requests;
     
-    
     modifier restrected() {
         require(msg.sender == manager);
         _;
